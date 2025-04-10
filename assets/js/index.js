@@ -1,25 +1,33 @@
-console.log(document);
-console.log(document.head);
-console.log(document.body);
+const btn = document.getElementById("click-btn");
+console.log(btn);
 
-const root1 = document.getElementById("root");
-console.log(root1);
+const clickHandler = function (event) {
+  console.log("btn was clicked");
+};
 
-console.dir(root1);
+btn.onclick = clickHandler;
 
-const divEls = document.getElementsByTagName("div");
-console.log(divEls);
+///////////////////////////////////////////////////
+const loginBtn = document.getElementById("login-btn");
 
-const divRoot2 = divEls[0];
+function loginBtnHandler(e) {
+  alert("Login in process");
+}
 
-const divClass = document.getElementsByClassName("content");
-console.log(divClass);
+loginBtn.addEventListener("click", loginBtnHandler);
+loginBtn.removeEventListener("click", loginBtnHandler);
 
-const root3 = document.querySelector("#root");
-console.log(root3);
+function loginMousemoveHandler(e) {
+  alert("Click me!");
+}
 
-const divElms = document.querySelectorAll("div");
-console.log(divElms);
+loginBtn.addEventListener("mousemove", loginMousemoveHandler);
 
-const contentClass = document.querySelectorAll(".content");
-console.log(contentClass);
+///
+const greetingBtn = document.getElementById("greeting-btn");
+
+function greetingBtnHandler(e) {
+  console.log("Hello world");
+}
+
+greetingBtn.addEventListener("click", greetingBtnHandler);
