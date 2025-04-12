@@ -1,50 +1,46 @@
-const slides = [
-  {
-    src: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "landscape1",
-  },
-  {
-    src: "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "landscape2",
-  },
-  {
-    src: "https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "landscape3",
-  },
-  {
-    src: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "landscape4",
-  },
-];
+const user = {
+  firstName: "Test",
+  lastName: "Testovych",
+  profilePhoto:
+    "https://images.pexels.com/photos/4902634/pexels-photo-4902634.jpeg",
+  birthday: new Date("2000-05-16"),
+  nickname: "super dev",
+  likesCount: 10,
+};
 
-let currentSlideIndex = 0;
-
-function updateSlideImage(currentSlideIndex) {
-  slideImg.src = slides[currentSlideIndex].src;
-  slideImg.alt = slides[currentSlideIndex].alt;
+function textAboutUserHandler() {
+  document.querySelector(
+    "h2"
+  ).textContent = `${user.firstName} ${user.lastName}`;
+  document.querySelector(
+    "#nickname"
+  ).textContent = `Nickname: ${user.nickname}`;
+  document.querySelector(
+    "#likesCount"
+  ).textContent = `Likes: ${user.likesCount}`;
 }
 
-const slideImg = document.querySelector("img");
-updateSlideImage(currentSlideIndex);
+document
+  .querySelector("button")
+  .addEventListener("click", textAboutUserHandler);
 
-const [prevBtn, nextBtn] = document.querySelectorAll(".navBtn");
+const img = document.querySelector("img");
+img.src = user.profilePhoto;
 
-function nextSlideHandler() {
-  /*if (currentSlideIndex < slides.length - 1) {
-    currentSlideIndex++;
-  } else {
-    currentSlideIndex = 0;
-  }*/
+const heard = document.querySelector("span");
 
-  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-  updateSlideImage(currentSlideIndex);
+function heardHandler() {
+  heard.style.color = "red";
 }
 
-nextBtn.addEventListener("click", nextSlideHandler);
+heard.addEventListener("click", heardHandler);
 
-function prevSlideHandler() {
-  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-  updateSlideImage(currentSlideIndex);
+const dateOfBirthday = document.querySelector("#age");
+dateOfBirthday.textContent = `Birthday: ${user.birthday}`;
+function ageHandler() {
+  dateOfBirthday.textContent = `Age: ${
+    new Date().getFullYear() - user.birthday.getFullYear()
+  }`;
 }
 
-prevBtn.addEventListener("click", prevSlideHandler);
+dateOfBirthday.addEventListener("mousemove", ageHandler);
