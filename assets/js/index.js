@@ -1,33 +1,19 @@
-const btn = document.getElementById("click-btn");
-console.log(btn);
+const p1 = document.querySelector("#p1");
+console.log(p1.title);
+console.log(p1.id);
 
-const clickHandler = function (event) {
-  console.log("btn was clicked");
-};
+p1.title = "new Title";
 
-btn.onclick = clickHandler;
+//p1.hidden = true
 
-///////////////////////////////////////////////////
-const loginBtn = document.getElementById("login-btn");
+p1.style.color = "red";
+p1.style.backgroundColor = "black";
 
-function loginBtnHandler(e) {
-  alert("Login in process");
-}
+const p2 = document.querySelector("#p2");
 
-loginBtn.addEventListener("click", loginBtnHandler);
-loginBtn.removeEventListener("click", loginBtnHandler);
+p2.setAttribute("title", "Title of p2");
+p2.setAttribute("style", "font-size:10px; color:yellow");
 
-function loginMousemoveHandler(e) {
-  alert("Click me!");
-}
+document.body.setAttribute("style", "background-color:blue");
 
-loginBtn.addEventListener("mousemove", loginMousemoveHandler);
-
-///
-const greetingBtn = document.getElementById("greeting-btn");
-
-function greetingBtnHandler(e) {
-  console.log("Hello world");
-}
-
-greetingBtn.addEventListener("click", greetingBtnHandler);
+p2.textContent= 'new'
