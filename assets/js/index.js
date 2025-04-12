@@ -1,21 +1,18 @@
-const bttnEl = document.querySelector("button");
-
-const clickHandler = (e) => {
-  document
-    .querySelector("h1")
-    .setAttribute("style", "background-color: purple;");
-
-  const img = document.querySelector(".mainImg");
-  img.src =
-    "https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg";
-  img.alt = "cat";
-  img.style.width = "200px";
-  img.style.heigth = "200px";
-
-  document.querySelectorAll("h2").forEach((h2) => {
-    h2.style.fontSize = "20px";
-    h2.style.color = "pink";
-  });
-};
-
-bttnEl.addEventListener("click", clickHandler);
+const slides = [
+  {
+    src: 'https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    alt: 'landscape1',
+  },
+  {
+    src: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    alt: 'landscape2',
+  },
+  {
+    src: 'https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    alt: 'landscape3',
+  },
+  {
+    src: 'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    alt: 'landscape4',
+  },
+];
