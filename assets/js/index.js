@@ -1,19 +1,21 @@
-const p1 = document.querySelector("#p1");
-console.log(p1.title);
-console.log(p1.id);
+const bttnEl = document.querySelector("button");
 
-p1.title = "new Title";
+const clickHandler = (e) => {
+  document
+    .querySelector("h1")
+    .setAttribute("style", "background-color: purple;");
 
-//p1.hidden = true
+  const img = document.querySelector(".mainImg");
+  img.src =
+    "https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg";
+  img.alt = "cat";
+  img.style.width = "200px";
+  img.style.heigth = "200px";
 
-p1.style.color = "red";
-p1.style.backgroundColor = "black";
+  document.querySelectorAll("h2").forEach((h2) => {
+    h2.style.fontSize = "20px";
+    h2.style.color = "pink";
+  });
+};
 
-const p2 = document.querySelector("#p2");
-
-p2.setAttribute("title", "Title of p2");
-p2.setAttribute("style", "font-size:10px; color:yellow");
-
-document.body.setAttribute("style", "background-color:blue");
-
-p2.textContent= 'new'
+bttnEl.addEventListener("click", clickHandler);
