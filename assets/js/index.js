@@ -1,18 +1,11 @@
-const body = document.body;
-const section = document.querySelector("section");
-const button = document.querySelector("button");
+const div = document.querySelector(".div");
 
-function btnClickHandler(e) {
-  console.log(this);
-  console.log("---------------");
-}
+div.addEventListener("click", function () {
+  this.classList.add("div2");
+});
 
-//capturing
-body.addEventListener("click", btnClickHandler, { capture: true });
-section.addEventListener("click", btnClickHandler, { capture: true });
-button.addEventListener("click", btnClickHandler, { capture: true });
+const h1 = document.querySelector("h1");
 
-//bubbling
-button.addEventListener("click", btnClickHandler);
-section.addEventListener("click", btnClickHandler);
-body.addEventListener("click", btnClickHandler);
+h1.addEventListener("click", function () {
+  this.classList.toggle("toggleHeader");
+});

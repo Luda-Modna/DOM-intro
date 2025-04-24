@@ -7,7 +7,21 @@ body {
   align-items: center;
 }
 
-section{
+.div {
   border: 5px solid green;
   padding: 30px;
+}
+
+.div2 {
+  background-color: green;
+}
+
+.header {
+  border: yellowgreen 5px solid;
+  padding: 25px;
+  margin-bottom: 5px;
+}
+
+.toggleHeader {
+  border: red solid 5px;
 }
