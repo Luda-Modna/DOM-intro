@@ -1,17 +1,9 @@
-const burgerBtn = document.querySelector(".burgerMenuBtn");
-const burgerContainer = document.querySelector(".burgerMenuContainer");
+"use strict";
 
-function burgerClickHandler(e) {
-  burgerContainer.classList.toggle("burgerMenuContainerHide");
-  burgerContainer.classList.toggle("burgerMenuContainerActive");
-  e.stopPropagation()
-}
+const section = document.createElement("section");
+const rootDiv = document.querySelector("#root");
 
-burgerBtn.addEventListener("click", burgerClickHandler);
+rootDiv.append(section);
 
-function bodyClickHandler() {
-  burgerContainer.classList.add("burgerMenuContainerHide");
-  burgerContainer.classList.remove("burgerMenuContainerActive");
-}
-
-document.body.addEventListener("click", bodyClickHandler, /*{ capture: true }*/);
+section.textContent = "Lorem ipsum";
+section.style.backgroundColor = "grey";
