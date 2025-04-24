@@ -1,42 +1,18 @@
-// model дані + методи роботи з ними
-class Counter {
-  constructor(counter) {
-    this.counter = counter;
-  }
-  inc() {
-    this.counter++;
-  }
-  dec() {
-    this.counter--;
-  }
+const body = document.body;
+const section = document.querySelector("section");
+const button = document.querySelector("button");
+
+function btnClickHandler(e) {
+  console.log(this);
+  console.log("---------------");
 }
 
-//viewModel
+//capturing
+body.addEventListener("click", btnClickHandler, { capture: true });
+section.addEventListener("click", btnClickHandler, { capture: true });
+button.addEventListener("click", btnClickHandler, { capture: true });
 
-//отримуємо необхідні посилання
-const [decBtn, incBtn] = document.querySelectorAll(".counterBtn");
-const counterEl = document.querySelector("#counter");
-
-//задаємо стан
-const count = new Counter(0);
-
-updateView()
-
-//додаємо 2 обробника події на - і +
-function decCount(e) {
-  count.dec();
-  updateView()
-}
-
-decBtn.addEventListener("click", decCount);
-
-function incCount(e) {
-  count.inc();
- updateView()
-}
-
-incBtn.addEventListener("click", incCount);
-
-function updateView(){
-   counterEl.textContent = count.counter;
-}
+//bubbling
+button.addEventListener("click", btnClickHandler);
+section.addEventListener("click", btnClickHandler);
+body.addEventListener("click", btnClickHandler);
