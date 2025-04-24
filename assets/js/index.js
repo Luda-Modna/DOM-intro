@@ -1,17 +1,56 @@
 "use strict";
 
-const user = {
-  firstName: "Test1",
-  lastName: "Testovich1",
-  age: 28,
-  photoSrc: "https://sigc.edu/sigc/ad-sigc/datas/images/userimg.jpg",
-};
+const users = [
+  {
+    firstName: "Test1",
+    lastName: "Testovich1",
+    age: 28,
+    photoSrc: "https://sigc.edu/sigc/ad-sigc/datas/images/userimg.jpg",
+  },
+  {
+    firstName: "Test2",
+    lastName: "Testovich2",
+    age: 31,
+    photoSrc:
+      "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    firstName: "Test3",
+    lastName: "Testovich3",
+    age: 70,
+    photoSrc:
+      "https://images.pexels.com/photos/573299/pexels-photo-573299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    firstName: "Test4",
+    lastName: "Testovich4",
+    age: 20,
+    photoSrc:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    firstName: "Test5",
+    lastName: "Testovich5",
+    age: 28,
+    photoSrc:
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+];
 
-const userCardEl = document.createElement("article");
-userCardEl.classList.add("userCard");
-document.body.append(userCardEl);
+const userCards = users.map((u) => createUserCard(u));
+document.body.append(...userCards);
 
-userCardEl.append(createUserImg(user), createUserInfo(user), createTrashIcon());
+function createUserCard(user) {
+  const userCardEl = document.createElement("article");
+  userCardEl.classList.add("userCard");
+  userCardEl.append(
+    createUserImg(user),
+    createUserInfo(user),
+    createTrashIcon()
+  );
+
+  return userCardEl;
+}
 
 function createUserImg({ photoSrc, firstName, lastName }) {
   const userImg = document.createElement("img");
@@ -24,7 +63,7 @@ function createUserImg({ photoSrc, firstName, lastName }) {
 function createUserInfo({ firstName, lastName, age }) {
   const userInfo = document.createElement("div");
   userInfo.classList.add("userInfo");
-  userCardEl.append(userInfo);
+  
 
   const userName = document.createElement("p");
   userName.classList.add("userName");
