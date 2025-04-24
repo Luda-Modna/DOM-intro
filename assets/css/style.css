@@ -1,0 +1,29 @@
+:root {
+  font-family: sans-serif;
+  --user-image-size: 100px;
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: grey 0 0 5px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.userImg {
+  width: var(--user-image-size);
+  height: var(--user-image-size);
+  border-radius: 50%;
+  border: red solid 2px;
+}
+
+.userAge {
+  color: grey;
+}
+
+.trashIcon {
+  margin-left: auto;
+}
