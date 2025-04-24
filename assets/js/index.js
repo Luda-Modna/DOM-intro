@@ -1,11 +1,17 @@
-const div = document.querySelector(".div");
+const burgerBtn = document.querySelector(".burgerMenuBtn");
+const burgerContainer = document.querySelector(".burgerMenuContainer");
 
-div.addEventListener("click", function () {
-  this.classList.add("div2");
-});
+function burgerClickHandler(e) {
+  burgerContainer.classList.toggle("burgerMenuContainerHide");
+  burgerContainer.classList.toggle("burgerMenuContainerActive");
+  e.stopPropagation()
+}
 
-const h1 = document.querySelector("h1");
+burgerBtn.addEventListener("click", burgerClickHandler);
 
-h1.addEventListener("click", function () {
-  this.classList.toggle("toggleHeader");
-});
+function bodyClickHandler() {
+  burgerContainer.classList.add("burgerMenuContainerHide");
+  burgerContainer.classList.remove("burgerMenuContainerActive");
+}
+
+document.body.addEventListener("click", bodyClickHandler, /*{ capture: true }*/);
