@@ -1,30 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: sans-serif;
-  --user-image-size: 100px;
 }
 
-.userCard {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  box-shadow: grey 0 0 5px;
+.news {
   margin: 10px;
+  box-shadow: grey 0 0 2px;
+}
+
+.titleLi {
+  position: relative;
+  background-size: cover;
+  min-height: 150px;
+  z-index: 1;
+  color: black;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   padding: 10px;
-  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.userImg {
-  width: var(--user-image-size);
-  height: var(--user-image-size);
-  border-radius: 50%;
-  border: red solid 2px;
-  object-fit: cover;
+.like {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.userAge {
+.titleLi::before {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.categoryNews {
   color: grey;
+  padding: 10px;
 }
 
-.trashIcon {
-  margin-left: auto;
+.textNews {
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateNews {
+  color: gray;
+  padding: 10px;
+  text-align: end;
 }
